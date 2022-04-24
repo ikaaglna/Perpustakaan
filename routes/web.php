@@ -23,3 +23,4 @@ Route::get('/about', function () {
 });
 
 Route::get('/warga', [WargaController::class, 'index']);
+Route::get('/tambahWarga', [WargaController::class, 'create']);
