@@ -8,45 +8,46 @@
     {{-- CSS --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Tambah Data</title>
+    <title>Ubah Data</title>
 </head>
 <body>
 
     <div class="container mt-5">
-        <form action="warga/saveDataWarga" method="POST">
+        <form action="warga/{{ $warga->id }}" method="POST">
+            @method('put');
             @csrf
             <div class="row">
                 <div class="col-8 mt-4">
                   <label for="inputNama">Nama Lengakap</label>
-                  <input type="text" class="form-control" id="nama" name="nama" placeholder="">
+                  <input type="text" class="form-control" id="nama" name="nama" placeholder="" value="{{ $warga->nama }}">
                 </div>
             </div>
         
             <div class="row">
                 <div class="col-8 mt-4">
                     <label>NIK</label>
-                    <input type="text" class="form-control" id="nik" name="nik" placeholder="">
+                    <input type="text" class="form-control" id="nik" name="nik" placeholder="" value="{{ $warga->nik }}">
                 </div>
             </div>
     
             <div class="row">
                 <div class="col-8 mt-4">
                     <label for="inputNama">No. Kartu Keluarga</label>
-                    <input type="text" class="form-control" id="no_kk" name="no_kk" placeholder="">
+                    <input type="text" class="form-control" id="no_kk" name="no_kk" placeholder="" value="{{ $warga->no_kk }}">
                 </div>
             </div>
     
             <div class="mt-4">Jenis Kelamin</div>
             <div class="row">
                 <div class="form-check mt-2 mr-5 ml-3">
-                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="L" checked>
+                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="L" @if($warga->jenis_kelamin =="L") checked; @endif>
                     <label class="form-check-label" for="exampleRadios1">
                       Laki-laki
                     </label>
                 </div>
         
                 <div class="form-check mt-2">
-                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="P">
+                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="P" @if($warga->jenis_kelamin =="P") checked; @endif>
                     <label class="form-check-label" for="exampleRadios1">
                       Perempuan
                     </label>
@@ -57,7 +58,7 @@
             <div class="row">
                 <div class="col-8 mt-4">
                     <label for="inputNama">Alamat</label>
-                    <input type="text" class="form-control" id="alamat" name="alamat" placeholder="">
+                    <input type="text" class="form-control" id="alamat" name="alamat" placeholder="" value="{{ $warga->alamat }}">
                 </div>
             </div>
     

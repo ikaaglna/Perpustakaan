@@ -24,3 +24,6 @@ Route::get('/about', function () {
 
 Route::get('/warga', [WargaController::class, 'index']);
 Route::get('/tambahWarga', [WargaController::class, 'create']);
+Route::post('warga/saveDataWarga', [WargaController::class, 'saveDataWarga']);
+Route::get('warga/{id}/ubah', [WargaController::class, 'ubah']);
+Route::put('warga/{id}/ubahDataWarga', [WargaController::class, 'ubahDataWarga']);
