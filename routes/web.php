@@ -23,7 +23,8 @@ Route::get('/about', function () {
 });
 
 Route::get('/warga', [WargaController::class, 'index']);
-Route::get('/tambahWarga', [WargaController::class, 'create']);
-Route::post('warga/saveDataWarga', [WargaController::class, 'saveDataWarga']);
-Route::get('warga/{id}/ubah', [WargaController::class, 'ubah']);
-Route::put('warga/{id}/ubahDataWarga', [WargaController::class, 'ubahDataWarga']);
+Route::get('/tambahWarga', [WargaController::class, 'create']); //masuk form
+Route::post('warga/tambahDataWarga', [WargaController::class, 'tambahDataWarga']); //controller simpan
+Route::get('warga/{id}/ubah', [WargaController::class, 'ubah']); //masuk form
+Route::put('warga/{id}', [WargaController::class, 'ubahDataWarga']); //controller ubah
+Route::delete('warga/{id}', [WargaController::class, 'hapusDataWarga']);

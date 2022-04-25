@@ -13,7 +13,7 @@
 <body>
 
     <div class="container mt-5">
-        <form action="warga/saveDataWarga" method="POST">
+        <form action="warga/tambahDataWarga" method="POST">
             @csrf
             <div class="row">
                 <div class="col-8 mt-4">

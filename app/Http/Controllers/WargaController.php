@@ -20,7 +20,7 @@ class WargaController extends Controller
         return view('tambahWarga');
     }
 
-    public function saveDataWarga(Request $request)
+    public function tambahDataWarga(Request $request)
     {
         //dd($request->all());
         Warga::create($request->except(['_token']));
@@ -36,8 +36,16 @@ class WargaController extends Controller
     public function ubahDataWarga($id, Request $request)
     {
         $warga = Warga::find($id); //mencari nilai berdasarkan id
-        $warga->update($request->except(['_token']))
+        $warga->update($request->except(['_token']));
         return redirect('warga');
     }
+
+    public function hapusDataWarga($id)
+    {
+        $warga = Warga::find($id); //mencari nilai berdasarkan id
+        $warga->delete();
+        return redirect('warga');
+    }
+    
     
 }

@@ -13,8 +13,8 @@
 <body>
 
     <div class="container mt-5">
-        <form action="warga/{{ $warga->id }}" method="POST">
-            @method('put');
+        <form action="/warga/{{ $warga->id }}" method="POST">
+            @method('put')
             @csrf
             <div class="row">
                 <div class="col-8 mt-4">
@@ -40,14 +40,15 @@
             <div class="mt-4">Jenis Kelamin</div>
             <div class="row">
                 <div class="form-check mt-2 mr-5 ml-3">
-                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="L" @if($warga->jenis_kelamin =="L") checked; @endif>
+                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="L" {{$warga->jenis_kelamin == 'L'? 'checked' : ''}}>
                     <label class="form-check-label" for="exampleRadios1">
                       Laki-laki
                     </label>
                 </div>
-        
+                {{-- <//?= //if($data['jenis_kelamin']=='L') echo 'checked'?> --}}
+                
                 <div class="form-check mt-2">
-                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="P" @if($warga->jenis_kelamin =="P") checked; @endif>
+                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="P" {{$warga->jenis_kelamin == 'P'? 'checked' : ''}}>
                     <label class="form-check-label" for="exampleRadios1">
                       Perempuan
                     </label>
@@ -65,7 +66,7 @@
             <br><br>
             <div class="row">
                 <div class="col-1">
-                    <button type="submit" class="btn btn-primary">Tambah</button>
+                    <button type="submit" class="btn btn-primary">Ubah</button>
                 </div>
                 <div class="col">
                     {{-- tombol --}}
