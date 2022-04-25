@@ -62,6 +62,16 @@
                     <input type="text" class="form-control" id="alamat" name="alamat" placeholder="" value="{{ $warga->alamat }}">
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-8 mt-4">
+                    <div class="form-group">
+                        <label for="surat">Surat</label>
+                        <br>
+                        <input type="file" class="form-control-file" id="surat" name="surat" value="">
+                      </div>
+                </div>
+            </div>
     
             <br><br>
             <div class="row">

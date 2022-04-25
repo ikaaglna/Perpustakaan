@@ -13,7 +13,7 @@
 <body>
 
     <div class="container mt-5">
-        <form action="warga/tambahDataWarga" method="POST">
+        <form action="warga/tambahDataWarga" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-8 mt-4">
@@ -60,6 +60,24 @@
                     <input type="text" class="form-control" id="alamat" name="alamat" placeholder="">
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-8 mt-4">
+                    <div class="form-group">
+                        <label for="surat">Surat</label>
+                        <input type="file" class="form-control-file" id="surat" name="surat">
+                      </div>
+                </div>
+            </div>
+            {{-- <div class="row">
+                <div class="col-8 mt-4">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                        <label class="custom-file-label" for="validatedCustomFile">Surat</label>
+                        <div class="invalid-feedback">Example invalid custom file feedback</div>
+                      </div>
+                </div>
+            </div> --}}
     
             <br><br>
             <div class="row">

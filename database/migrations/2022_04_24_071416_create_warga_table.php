@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('no_kk')->nullable;//tidak wajib diisi
             $table->enum('jenis_kelamin',['L', 'P']);
             $table->text('alamat');
+            $table->string('surat');
             $table->timestamps();
         });
     }

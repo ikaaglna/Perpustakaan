@@ -7,12 +7,10 @@ use Illuminate\Http\Request;
 
 class WargaController extends Controller
 {
-    //
     public function index()
     {
         $warga = Warga::all(); //mengambail semua nilai
-        return view('warga', compact(['warga']));
-        
+        return view('warga', compact(['warga']));   
     }
 
     public function create()
@@ -22,8 +20,21 @@ class WargaController extends Controller
 
     public function tambahDataWarga(Request $request)
     {
-        //dd($request->all());
-        Warga::create($request->except(['_token']));
+        
+        $file = $request->surat;
+        $namaFile = $file->getClientOriginalName();
+        //dd($namaFile);
+
+        $file->move(public_path().'/assets/upload', $namaFile); //simpan ke direktori
+        //Warga::create($request->except(['_token']));
+        Warga::create([
+            'nama' => $request->nama,
+            'nik' => $request->nik,
+            'no_kk' => $request->no_kk,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'alamat' => $request->nama,
+            'surat' => $namaFile
+        ]);
         return redirect('warga');
     }
 

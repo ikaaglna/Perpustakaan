@@ -18,12 +18,13 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th class="bg-secondary text-white" scope="col">No.</th>
+          {{-- <th class="bg-secondary text-white" scope="col">No.</th> --}}
           <th class="bg-secondary text-white" scope="col">Nama</th>
           <th class="bg-secondary text-white" scope="col">NIK</th>
           <th class="bg-secondary text-white" scope="col">Nomor KK</th>
           <th class="bg-secondary text-white" scope="col">Jenis Kelamin</th>
           <th class="bg-secondary text-white" scope="col">Alamat</th>
+          <th class="bg-secondary text-white" scope="col">File</th>
           <th class="bg-secondary text-white" scope="col">Aksi</th>
         </tr>
       </thead>
@@ -31,12 +32,15 @@
           @foreach ( $warga as $data)
               <tr>
                   {{-- <th scope="row">{{ $data->id }}</th> --}}
-                  <th scope="row"></th>
+                  {{-- <th scope="row"></th> --}}
                   <td>{{ $data->nama }}</td>
                   <td>{{ $data->nik }}</td>
                   <td>{{ $data->no_kk }}</td>
                   <td>{{ $data->jenis_kelamin }}</td>
                   <td>{{ $data->alamat }}</td>
+                  <td>
+                    <a href="{{ asset('/assets/upload'. $data->surat ) }}">{{ $data->surat }}</a>
+                  </td>
                   <td>
                     <a href="warga/{{ $data->id }}/ubah">Ubah
                       {{-- <button class="btn btn-success btn-sm col-12" title="Ubah">
@@ -49,7 +53,7 @@
                     <form action="warga/{{$data->id}}" method="POST">
                       @csrf
                       @method('delete')  
-                      <button type="submit" class="btn btn-primary">Hapus</button>
+                      <button type="submit" class="btn btn-danger">Hapus</button>
                     </form>
                   </td>
                   
