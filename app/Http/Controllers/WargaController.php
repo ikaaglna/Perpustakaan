@@ -63,7 +63,8 @@ class WargaController extends Controller
         //     'alamat' => $request->nama,
         //     'surat' => $fileBaru
         // ]);
-        // return redirect('warga');
+        
+        return redirect('warga');
     }
 
     public function hapusDataWarga($id)
