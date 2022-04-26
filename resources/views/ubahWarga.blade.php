@@ -68,6 +68,16 @@
                     <div class="form-group">
                         <label for="surat">Surat</label>
                         <br>
+                        {{-- pop up --}}
+                        <label type="button" class="btn col-auto text-primary" data-toggle="modal" data-target="#view"><u>{{ $warga->surat }}</u></label>
+                        <div class="modal fade" id="view" role="dialog" arialabelledby="modalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl" role="document">
+                                <div class="modal-content">
+                                    <embed src="{{ asset('/assets/upload/'.$warga->surat) }}" type="application/pdf" height="600px">
+                                </div>
+                            </div>
+                        </div>
+
                         <input type="file" class="form-control-file" id="surat" name="surat" value="">
                       </div>
                 </div>

@@ -39,20 +39,20 @@
                   <td>{{ $data->jenis_kelamin }}</td>
                   <td>{{ $data->alamat }}</td>
                   <td>
-                    <label type="button" class="btn col-auto text-primary" data-toggle="modal" data-target="#view"><u>{{ $data->surat }}</u></label>
+                    {{-- <label type="button" class="btn col-auto text-primary" data-toggle="modal" data-target="#view"><u>{{ $data->surat }}</u></label> --}}
 
-                    {{-- tab yang berbeda
-                      <a href="{{ asset('/assets/upload/'.$data->surat) }}" target="_blank"> view Pdf </a> --}}
-
+                    
+                    {{-- tab yang berbeda --}}
+                      <a href="{{ asset('/assets/upload/'.$data->surat) }}" target="_blank"><u>{{ $data->surat }}</u></a>
                       
-                    {{-- pop up --}}
+                    {{-- pop up
                     <div class="modal fade" id="view" role="dialog" arialabelledby="modalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-xl" role="document">
                             <div class="modal-content">
                                 <embed src="{{ asset('/assets/upload/'.$data->surat) }}" type="application/pdf" height="600px">
                             </div>
                         </div>
-                    </div> 
+                    </div>  --}}
 
                   </td>
 
