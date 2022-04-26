@@ -39,8 +39,23 @@
                   <td>{{ $data->jenis_kelamin }}</td>
                   <td>{{ $data->alamat }}</td>
                   <td>
-                    <a href="{{ asset('/assets/upload'. $data->surat ) }}">{{ $data->surat }}</a>
+                    <label type="button" class="btn col-auto text-primary" data-toggle="modal" data-target="#view"><u>{{ $data->surat }}</u></label>
+
+                    {{-- tab yang berbeda
+                      <a href="{{ asset('/assets/upload/'.$data->surat) }}" target="_blank"> view Pdf </a> --}}
+
+                      
+                    {{-- pop up --}}
+                    <div class="modal fade" id="view" role="dialog" arialabelledby="modalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl" role="document">
+                            <div class="modal-content">
+                                <embed src="{{ asset('/assets/upload/'.$data->surat) }}" type="application/pdf" height="600px">
+                            </div>
+                        </div>
+                    </div> 
+
                   </td>
+
                   <td>
                     <a href="warga/{{ $data->id }}/ubah">Ubah
                       {{-- <button class="btn btn-success btn-sm col-12" title="Ubah">
@@ -64,10 +79,10 @@
     </table>
   </div>
     
-
       {{-- CSS JS --}}
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </body>
 </html>
