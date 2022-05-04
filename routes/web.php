@@ -14,13 +14,13 @@ use App\Http\Controllers\WargaController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/about', function () {
-    return view('about');
-});
+// Route::get('/about', function () {
+//     return view('about');
+// });
 
 Route::get('/warga', [WargaController::class, 'index']);
 Route::get('/tambahWarga', [WargaController::class, 'create']); //masuk form
